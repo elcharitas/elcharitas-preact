@@ -4,6 +4,9 @@ import Banner from "../../assets/header.jpg";
 import Particles from "react-tsparticles";
 
 const Home = () => {
+    if (innerHeight > innerWidth) {
+        document.body.style.backgroundImage = `url(${Banner}) center`;
+    }
     return (
         <>
             <Box
@@ -90,6 +93,7 @@ const Home = () => {
             />
             <Box
                 pos="absolute"
+                w="100vw"
                 h="100vh"
                 top={0}
                 left={0}
