@@ -60,14 +60,14 @@ export default function Header() {
     );
 
     const Items = (
-        <>
+        <Box>
             <Button as={Link} href="/" variant="ghost">
                 Home
             </Button>
             <Button variant="ghost">Blog</Button>
             <Button variant="ghost">Github</Button>
             <Button variant="ghost">Twitter</Button>
-        </>
+        </Box>
     );
 
     return (
@@ -100,9 +100,9 @@ export default function Header() {
                         color="brand.500"
                         display={{ base: "none", md: "inline-flex" }}
                     >
-                        <Items />
+                        {Items}
                     </HStack>
-                    <SponsorButton />
+                    {SponsorButton}
                     <Box display={{ base: "inline-flex", md: "none" }}>
                         <IconButton
                             display={{ base: "flex", md: "none" }}
@@ -132,7 +132,7 @@ export default function Header() {
                                 aria-label="Close menu"
                                 onClick={mobileNav.onClose}
                             />
-                            <Items />
+                            {Items}
                         </VStack>
                     </Box>
                 </HStack>
