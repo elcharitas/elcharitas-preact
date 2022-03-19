@@ -132,7 +132,7 @@ const Home = () => {
                         alignItems="start"
                         justifyContent="center"
                         px={{ base: 4, lg: 20 }}
-                        py={35}
+                        py={25}
                     >
                         <Badge
                             color="white"
