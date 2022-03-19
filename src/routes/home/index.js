@@ -4,7 +4,7 @@ import Banner from "../../assets/header.jpg";
 import Particles from "react-tsparticles";
 
 const Home = () => {
-    if (innerHeight > innerWidth) {
+    if (window.innerHeight > window.innerWidth) {
         document.body.style.backgroundImage = `url(${Banner}) center`;
     }
     return (
