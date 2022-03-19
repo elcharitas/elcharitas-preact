@@ -137,7 +137,8 @@ const Home = () => {
                     >
                         <Badge
                             color="white"
-                            py={1}
+                            pt={20}
+                            pb={1}
                             variant="solid"
                             colorScheme="brand"
                             rounded="full"

@@ -12,7 +12,6 @@ import {
     IconButton,
     Drawer,
     DrawerBody,
-    DrawerFooter,
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
@@ -159,13 +158,11 @@ export default function Header() {
             >
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerCloseButton />
+                    <DrawerCloseButton color="white" />
 
-                    <DrawerBody bg="blackAlpha.800" pt="20" color="white">
+                    <DrawerBody bg="black" pt="20" color="white">
                         <VStack>{Items}</VStack>
                     </DrawerBody>
-
-                    <DrawerFooter>&nbsp;</DrawerFooter>
                 </DrawerContent>
             </Drawer>
         </>
