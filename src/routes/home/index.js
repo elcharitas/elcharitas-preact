@@ -4,9 +4,6 @@ import Banner from "../../assets/header.jpg";
 import Particles from "react-tsparticles";
 
 const Home = () => {
-    if (window.innerHeight > window.innerWidth) {
-        document.body.style.backgroundImage = `url(${Banner}) center`;
-    }
     return (
         <>
             <Box
@@ -101,7 +98,7 @@ const Home = () => {
                 bottom={0}
                 bgSize="contain"
                 bgRepeat="no-repeat"
-                bg={`url(${Banner}) center`}
+                bg={`url(${Banner})`}
                 zIndex={-100}
             >
                 &nbsp;
