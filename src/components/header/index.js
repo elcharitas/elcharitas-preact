@@ -18,7 +18,7 @@ import {
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
 
-export default function Gslr() {
+export default function Header() {
     const mobileNav = useDisclosure();
 
     const SponsorButton = (
@@ -59,7 +59,7 @@ export default function Gslr() {
         </Box>
     );
 
-    const Items = () => (
+    const Items = (
         <>
             <Button as={Link} href="/" variant="ghost">
                 Home
