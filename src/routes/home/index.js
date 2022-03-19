@@ -13,6 +13,10 @@ const Home = () => {
         <SimpleGrid
             columns={{ base: 1, md: 2 }}
             spacing={0}
+            h="100vh"
+            bgSize="cover"
+            bgPos="center"
+            bgRepeat="no-repeat"
             bg={`url(${Banner})`}
             _after={{
                 bg: "brand.500",
@@ -48,7 +52,7 @@ const Home = () => {
                     mb={6}
                     fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
                     fontWeight="bold"
-                    color={useColorModeValue("brand.600", "gray.300")}
+                    color="whiteAlpha.300"
                     lineHeight="shorter"
                 >
                     Blockchain Engineer
