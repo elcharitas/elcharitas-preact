@@ -1,23 +1,14 @@
 import { h } from "preact";
-import { chakra, Flex, Badge, SimpleGrid, Img } from "@chakra-ui/react";
+import { chakra, Flex, Badge, SimpleGrid, Box } from "@chakra-ui/react";
 import Banner from "../../assets/header.jpg";
 import Particles from "react-tsparticles";
 
 const Home = () => {
     return (
         <>
-            <Img
-                as={Particles}
+            <Box
                 id="particles"
-                pos="absolute"
-                h="100vh"
-                top={0}
-                left={0}
-                right={0}
-                bottom={0}
-                bgSize="contain"
-                bgRepeat="no-repeat"
-                bg={`url(${Banner}) center`}
+                as={Particles}
                 zIndex={-100}
                 options={{
                     background: {
@@ -96,9 +87,21 @@ const Home = () => {
                     },
                     detectRetina: true,
                 }}
+            />
+            <Box
+                pos="absolute"
+                h="100vh"
+                top={0}
+                left={0}
+                right={0}
+                bottom={0}
+                bgSize="contain"
+                bgRepeat="no-repeat"
+                bg={`url(${Banner}) center`}
+                zIndex={-100}
             >
                 &nbsp;
-            </Img>
+            </Box>
             <SimpleGrid
                 columns={{ base: 1, md: 2 }}
                 spacing={0}
