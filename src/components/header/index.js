@@ -131,7 +131,7 @@ export default function Header() {
                         <HStack
                             spacing={1}
                             mr={1}
-                            color="brand.500"
+                            color="white"
                             display={{ base: "none", md: "inline-flex" }}
                         >
                             {Items}
@@ -154,7 +154,6 @@ export default function Header() {
             </chakra.header>
             <Drawer
                 isOpen={mobileNav.isOpen}
-                colorScheme="purple"
                 placement="right"
                 onClose={mobileNav.onClose}
             >
@@ -162,7 +161,9 @@ export default function Header() {
                 <DrawerContent>
                     <DrawerCloseButton />
 
-                    <DrawerBody>{Items}</DrawerBody>
+                    <DrawerBody bg="blackAlpha.800" pt="20" color="white">
+                        {Items}
+                    </DrawerBody>
 
                     <DrawerFooter>&nbsp;</DrawerFooter>
                 </DrawerContent>
