@@ -36,7 +36,8 @@
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-tsparticles": "^1.42.3"
   },
   "jest": {
     "preset": "jest-preset-preact",
