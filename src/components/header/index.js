@@ -8,10 +8,14 @@ import {
     HStack,
     Button,
     useDisclosure,
-    VStack,
     Icon,
     IconButton,
-    CloseButton,
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaCoffee } from "react-icons/fa";
@@ -97,71 +101,71 @@ export default function Header() {
     );
 
     return (
-        <chakra.header
-            bg="transparent"
-            color="white"
-            w="full"
-            px={{ base: 2, sm: 4 }}
-            py={4}
-            shadow="md"
-        >
-            <Flex alignItems="center" justifyContent="space-between" mx="auto">
-                <Flex>
-                    <chakra.a
-                        href="/"
-                        title="Choc Home Page"
-                        display="flex"
-                        alignItems="center"
-                        fontWeight="extrabold"
-                    >
-                        elcharitas.dev
-                    </chakra.a>
-                </Flex>
-                <HStack display="flex" alignItems="center" spacing={1}>
-                    <HStack
-                        spacing={1}
-                        mr={1}
-                        color="brand.500"
-                        display={{ base: "none", md: "inline-flex" }}
-                    >
-                        {Items}
-                    </HStack>
-                    {SponsorButton}
-                    <Box display={{ base: "inline-flex", md: "none" }}>
-                        <IconButton
-                            display={{ base: "flex", md: "none" }}
-                            aria-label="Open menu"
-                            fontSize="20px"
-                            color={"white"}
-                            bg="transparent"
-                            _hover={{ color: "purple" }}
-                            icon={<AiOutlineMenu />}
-                            onClick={mobileNav.onOpen}
-                        />
-
-                        <VStack
-                            pos="absolute"
-                            top={0}
-                            left={0}
-                            right={0}
-                            display={mobileNav.isOpen ? "flex" : "none"}
-                            flexDirection="column"
-                            p={2}
-                            pb={4}
-                            bg="gray.900"
-                            spacing={3}
-                            rounded="sm"
-                            shadow="sm"
+        <>
+            <chakra.header
+                bg="transparent"
+                color="white"
+                w="full"
+                px={{ base: 2, sm: 4 }}
+                py={4}
+                shadow="md"
+            >
+                <Flex
+                    alignItems="center"
+                    justifyContent="space-between"
+                    mx="auto"
+                >
+                    <Flex>
+                        <chakra.a
+                            href="/"
+                            title="Choc Home Page"
+                            display="flex"
+                            alignItems="center"
+                            fontWeight="extrabold"
                         >
-                            <CloseButton
-                                aria-label="Close menu"
-                                onClick={mobileNav.onClose}
-                            />
+                            elcharitas.dev
+                        </chakra.a>
+                    </Flex>
+                    <HStack display="flex" alignItems="center" spacing={1}>
+                        <HStack
+                            spacing={1}
+                            mr={1}
+                            color="brand.500"
+                            display={{ base: "none", md: "inline-flex" }}
+                        >
                             {Items}
-                        </VStack>
-                    </Box>
-                </HStack>
-            </Flex>
-        </chakra.header>
+                        </HStack>
+                        {SponsorButton}
+                        <Box display={{ base: "inline-flex", md: "none" }}>
+                            <IconButton
+                                display={{ base: "flex", md: "none" }}
+                                aria-label="Open menu"
+                                fontSize="20px"
+                                color={"white"}
+                                bg="transparent"
+                                _hover={{ color: "purple" }}
+                                icon={<AiOutlineMenu />}
+                                onClick={mobileNav.onOpen}
+                            />
+                        </Box>
+                    </HStack>
+                </Flex>
+            </chakra.header>
+            <Drawer
+                isOpen={mobileNav.isOpen}
+                colorScheme="purple"
+                placement="right"
+                onClose={mobileNav.onClose}
+            >
+                <DrawerOverlay />
+                <DrawerContent>
+                    <DrawerCloseButton />
+
+                    <DrawerBody>{Items}</DrawerBody>
+
+                    <DrawerFooter>&nbsp;</DrawerFooter>
+                </DrawerContent>
+            </Drawer>
+        </>
     );
 }
