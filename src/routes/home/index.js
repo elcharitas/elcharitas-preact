@@ -55,7 +55,7 @@ const Home = () => {
                         color="white"
                         lineHeight="shorter"
                     >
-                        Blockchain{" "}
+                        Software{" "}
                         <chakra.span color="purple">Engineer</chakra.span>
                     </chakra.h1>
                     <chakra.p
@@ -65,7 +65,10 @@ const Home = () => {
                         color={"gray.100"}
                         letterSpacing="wider"
                     >
-                        A design centric software genius
+                        A design centric software genius building amazing
+                        cutting edge technologies using Solidity, Rust,
+                        JavaScript, Dart and Python. Building products for the
+                        web, mobile and the Metaverse.
                     </chakra.p>
                 </Flex>
             </SimpleGrid>

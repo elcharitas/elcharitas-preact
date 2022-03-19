@@ -5,7 +5,6 @@ import {
     chakra,
     Box,
     Flex,
-    VisuallyHidden,
     HStack,
     Button,
     useDisclosure,
@@ -40,18 +39,18 @@ export default function Header() {
             outline="0"
             transition="all 0.3s"
             _hover={{
-                bg: "gray.100",
-                borderColor: "gray.300",
+                bg: "gray.50",
+                borderColor: "purple.300",
             }}
             _active={{
-                borderColor: "gray.200",
+                borderColor: "purple.800",
             }}
             _focus={{
                 boxShadow: "outline",
             }}
             ml={5}
         >
-            <Icon as={FaHeart} w="4" h="4" color="red.500" mr="2" />
+            <Icon as={FaHeart} w="4" h="4" color="purple.500" mr="2" />
             <Box as="strong" lineHeight="inherit" fontWeight="semibold">
                 Donate
             </Box>
