@@ -7,14 +7,13 @@ const Home = () => {
     return (
         <>
             <Box
-                as={Particles}
                 id="particles"
                 pos="absolute"
                 h="100vh"
                 top={0}
                 left={0}
                 right={0}
-                bottom={-50}
+                bottom={0}
                 bgSize="contain"
                 bgRepeat="no-repeat"
                 bg={`url(${Banner}) center`}

@@ -14,7 +14,7 @@ import {
     CloseButton,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaHeart } from "react-icons/fa";
+import { FaCoffee } from "react-icons/fa";
 
 export default function Header() {
     const mobileNav = useDisclosure();
@@ -50,9 +50,9 @@ export default function Header() {
             }}
             ml={5}
         >
-            <Icon as={FaHeart} w="4" h="4" color="purple.500" mr="2" />
+            <Icon as={FaCoffee} w="4" h="4" color="purple" mr="2" />
             <Box as="strong" lineHeight="inherit" fontWeight="semibold">
-                Donate
+                Buy me Coffee
             </Box>
         </Box>
     );
