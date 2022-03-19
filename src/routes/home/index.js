@@ -1,11 +1,5 @@
 import { h } from "preact";
-import {
-    chakra,
-    useColorModeValue,
-    Flex,
-    Badge,
-    SimpleGrid,
-} from "@chakra-ui/react";
+import { chakra, Flex, Badge, SimpleGrid } from "@chakra-ui/react";
 import Banner from "../../assets/header.jpg";
 
 const Home = () => {
@@ -13,7 +7,7 @@ const Home = () => {
         <SimpleGrid
             columns={{ base: 1, md: 2 }}
             spacing={0}
-            h="95vh"
+            h="90vh"
             bgSize="contain"
             bgPos="center"
             bgRepeat="no-repeat"
@@ -39,9 +33,7 @@ const Home = () => {
             >
                 <Badge
                     color="white"
-                    px={3}
                     py={1}
-                    mb={2}
                     variant="solid"
                     colorScheme="brand"
                     rounded="full"
@@ -52,7 +44,7 @@ const Home = () => {
                     mb={6}
                     fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
                     fontWeight="bold"
-                    color="whiteAlpha.100"
+                    color="white"
                     lineHeight="shorter"
                 >
                     Blockchain Engineer
@@ -61,7 +53,7 @@ const Home = () => {
                     pr={{ base: 0, lg: 16 }}
                     mb={4}
                     fontSize="sm"
-                    color={useColorModeValue("brand.600", "gray.400")}
+                    color={"gray.100"}
                     letterSpacing="wider"
                 >
                     A design centric software genius
