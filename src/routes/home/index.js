@@ -10,10 +10,11 @@ const Home = () => {
                 top={0}
                 left={0}
                 right={0}
-                bottom={0}
+                bottom={-50}
                 bgSize="contain"
                 bgRepeat="no-repeat"
                 bg={`url(${Banner}) center`}
+                zIndex={-100}
             />
             <SimpleGrid
                 columns={{ base: 1, md: 2 }}
