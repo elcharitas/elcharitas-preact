@@ -1,37 +1,25 @@
 import { h } from "preact";
-import { Link as PLink } from "preact-router/match";
+import { Link } from "preact-router/match";
+
 import {
     chakra,
+    Box,
     Flex,
+    useColorModeValue,
+    VisuallyHidden,
     HStack,
+    Button,
+    useDisclosure,
+    VStack,
     Icon,
     IconButton,
-    Link,
-    useColorMode,
-    useColorModeValue,
-    useDisclosure,
     CloseButton,
-    Box,
-    VStack,
-    Button,
 } from "@chakra-ui/react";
-import { FaMoon, FaSun, FaHeart } from "react-icons/fa";
-import {
-    AiFillGithub,
-    AiOutlineMenu,
-    AiFillHome,
-    AiOutlineInbox,
-} from "react-icons/ai";
-import { BsFillCameraVideoFill } from "react-icons/bs";
+import { AiOutlineMenu } from "react-icons/ai";
+import { FaHeart } from "react-icons/fa";
 
-const Header = () => {
+export default function Gslr() {
     const mobileNav = useDisclosure();
-
-    const { toggleColorMode: toggleMode } = useColorMode();
-    const text = useColorModeValue("dark", "light");
-    const SwitchIcon = useColorModeValue(FaMoon, FaSun);
-
-    const bg = useColorModeValue("white", "gray.800");
 
     const SponsorButton = (
         <Box
@@ -70,125 +58,85 @@ const Header = () => {
             </Box>
         </Box>
     );
-    const MobileNavContent = (
-        <VStack
-            pos="absolute"
-            top={0}
-            left={0}
-            right={0}
-            display={mobileNav.isOpen ? "flex" : "none"}
-            flexDirection="column"
-            p={2}
-            pb={4}
-            m={2}
-            bg={bg}
-            spacing={3}
-            rounded="sm"
-            shadow="sm"
-        >
-            <CloseButton
-                aria-label="Close menu"
-                justifySelf="self-start"
-                onClick={mobileNav.onClose}
-            />
-            <Button w="full" variant="ghost" leftIcon={<AiFillHome />}>
+
+    const Items = () => (
+        <>
+            <Button as={Link} href="/" variant="ghost">
                 Home
             </Button>
-            <Button
-                w="full"
-                variant="solid"
-                colorScheme="brand"
-                leftIcon={<AiOutlineInbox />}
-            >
-                Blog
-            </Button>
-            <Button
-                w="full"
-                variant="ghost"
-                leftIcon={<BsFillCameraVideoFill />}
-            >
-                Contact
-            </Button>
-        </VStack>
+            <Button variant="ghost">Blog</Button>
+            <Button variant="ghost">Github</Button>
+            <Button variant="ghost">Twitter</Button>
+        </>
     );
+
     return (
-        <Box pos="relative">
-            <chakra.header
-                shadow={"sm"}
-                transition="box-shadow 0.2s"
-                bg={"gray.800"}
-                borderTop="6px solid"
-                borderTopColor="brand.400"
-                w="full"
-                overflowY="hidden"
-            >
-                <chakra.div h="4.5rem" mx="auto" maxW="1200px">
-                    <Flex
-                        w="full"
-                        h="full"
-                        px="6"
-                        align="center"
-                        justify="space-between"
+        <chakra.header
+            bg="gray.900"
+            w="full"
+            px={{ base: 2, sm: 4 }}
+            py={4}
+            shadow="md"
+        >
+            <Flex alignItems="center" justifyContent="space-between" mx="auto">
+                <Flex>
+                    <chakra.a
+                        href="/"
+                        title="Choc Home Page"
+                        display="flex"
+                        alignItems="center"
                     >
-                        <Flex align="center">
-                            <Link as={PLink} href="/" color="gray.400">
-                                elcharitas.dev
-                            </Link>
-                        </Flex>
+                        elcharitas.dev
+                        <VisuallyHidden>elcharitas.dev</VisuallyHidden>
+                    </chakra.a>
+                    <chakra.h1 fontSize="xl" fontWeight="medium" ml="2">
+                        elcharitas.dev
+                    </chakra.h1>
+                </Flex>
+                <HStack display="flex" alignItems="center" spacing={1}>
+                    <HStack
+                        spacing={1}
+                        mr={1}
+                        color="brand.500"
+                        display={{ base: "none", md: "inline-flex" }}
+                    >
+                        <Items />
+                    </HStack>
+                    <SponsorButton />
+                    <Box display={{ base: "inline-flex", md: "none" }}>
+                        <IconButton
+                            display={{ base: "flex", md: "none" }}
+                            aria-label="Open menu"
+                            fontSize="20px"
+                            color={useColorModeValue("gray.800", "inherit")}
+                            variant="ghost"
+                            icon={<AiOutlineMenu />}
+                            onClick={mobileNav.onOpen}
+                        />
 
-                        <Flex
-                            justify="flex-end"
-                            w="full"
-                            maxW="824px"
-                            align="center"
-                            color="gray.400"
+                        <VStack
+                            pos="absolute"
+                            top={0}
+                            left={0}
+                            right={0}
+                            display={mobileNav.isOpen ? "flex" : "none"}
+                            flexDirection="column"
+                            p={2}
+                            pb={4}
+                            bg="gray.900"
+                            spacing={3}
+                            rounded="sm"
+                            shadow="sm"
                         >
-                            <HStack
-                                spacing="5"
-                                display={{ base: "none", md: "flex" }}
-                            >
-                                <Link
-                                    isExternal
-                                    aria-label="Go to GitHub page"
-                                    href="https://github.com/elcharitas"
-                                >
-                                    <Icon
-                                        as={AiFillGithub}
-                                        display="block"
-                                        transition="color 0.2s"
-                                        w="5"
-                                        h="5"
-                                        _hover={{ color: "gray.600" }}
-                                    />
-                                </Link>
-                            </HStack>
-                            <IconButton
-                                size="md"
-                                fontSize="lg"
-                                aria-label={`Switch to ${text} mode`}
-                                variant="ghost"
-                                color="current"
-                                ml={{ base: "0", md: "3" }}
-                                onClick={toggleMode}
-                                icon={<SwitchIcon />}
+                            <CloseButton
+                                aria-label="Close menu"
+                                onClick={mobileNav.onClose}
                             />
-                            {SponsorButton}
-                            <IconButton
-                                display={{ base: "flex", md: "none" }}
-                                aria-label="Open menu"
-                                fontSize="20px"
-                                color={useColorModeValue("gray.800", "inherit")}
-                                variant="ghost"
-                                icon={<AiOutlineMenu />}
-                                onClick={mobileNav.onOpen}
-                            />
-                        </Flex>
-                    </Flex>
-                    {MobileNavContent}
-                </chakra.div>
-            </chakra.header>
-        </Box>
+                            <Items />
+                        </VStack>
+                    </Box>
+                </HStack>
+            </Flex>
+        </chakra.header>
     );
-};
-
-export default Header;
+}
