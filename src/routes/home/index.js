@@ -6,6 +6,7 @@ const Home = () => {
     return (
         <Box
             h="90vh"
+            pos="absolute"
             top={-100}
             bgSize="contain"
             bgRepeat="no-repeat"
@@ -14,6 +15,7 @@ const Home = () => {
             <SimpleGrid
                 columns={{ base: 1, md: 2 }}
                 spacing={0}
+                pt={80}
                 _after={{
                     bg: "brand.500",
                     opacity: 0.25,
