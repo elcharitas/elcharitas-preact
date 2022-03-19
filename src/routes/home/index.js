@@ -4,14 +4,17 @@ import Banner from "../../assets/header.jpg";
 
 const Home = () => {
     return (
-        <Box
-            h="90vh"
-            pos="absolute"
-            top={-100}
-            bgSize="contain"
-            bgRepeat="no-repeat"
-            bg={`url(${Banner}) center`}
-        >
+        <>
+            <Box
+                pos="absolute"
+                top={0}
+                left={0}
+                right={0}
+                bottom={0}
+                bgSize="contain"
+                bgRepeat="no-repeat"
+                bg={`url(${Banner}) center`}
+            />
             <SimpleGrid
                 columns={{ base: 1, md: 2 }}
                 spacing={0}
@@ -64,7 +67,7 @@ const Home = () => {
                     </chakra.p>
                 </Flex>
             </SimpleGrid>
-        </Box>
+        </>
     );
 };
 
