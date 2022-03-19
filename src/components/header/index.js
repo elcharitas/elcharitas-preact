@@ -53,19 +53,49 @@ export default function Header() {
         >
             <Icon as={FaHeart} w="4" h="4" color="red.500" mr="2" />
             <Box as="strong" lineHeight="inherit" fontWeight="semibold">
-                Sponsor
+                Donate
             </Box>
         </Box>
     );
 
     const Items = (
         <Box>
-            <Button as={Link} href="/" variant="ghost">
+            <Button
+                as={Link}
+                href="/"
+                bg="transparent"
+                size="sm"
+                _hover={{ color: "purple" }}
+            >
                 Home
             </Button>
-            <Button variant="ghost">Blog</Button>
-            <Button variant="ghost">Github</Button>
-            <Button variant="ghost">Twitter</Button>
+            <Button
+                as={Link}
+                href="https://blog.elcharitas.dev"
+                bg="transparent"
+                size="sm"
+                _hover={{ color: "purple" }}
+            >
+                Blog
+            </Button>
+            <Button
+                as={Link}
+                href="https://github.com/elcharitas"
+                bg="transparent"
+                size="sm"
+                _hover={{ color: "purple" }}
+            >
+                Github
+            </Button>
+            <Button
+                as={Link}
+                href="https://twitter.com/iamelcharitas"
+                bg="transparent"
+                size="sm"
+                _hover={{ color: "purple" }}
+            >
+                Twitter
+            </Button>
         </Box>
     );
 
@@ -85,9 +115,9 @@ export default function Header() {
                         title="Choc Home Page"
                         display="flex"
                         alignItems="center"
+                        fontWeight="extrabold"
                     >
                         elcharitas.dev
-                        <VisuallyHidden>elcharitas.dev</VisuallyHidden>
                     </chakra.a>
                 </Flex>
                 <HStack display="flex" alignItems="center" spacing={1}>
@@ -106,7 +136,8 @@ export default function Header() {
                             aria-label="Open menu"
                             fontSize="20px"
                             color={"white"}
-                            variant="ghost"
+                            bg="transparent"
+                            _hover={{ color: "purple" }}
                             icon={<AiOutlineMenu />}
                             onClick={mobileNav.onOpen}
                         />

@@ -19,7 +19,6 @@ const Home = () => {
             <SimpleGrid
                 columns={{ base: 1, md: 2 }}
                 spacing={0}
-                pt={80}
                 _after={{
                     bg: "brand.500",
                     opacity: 0.25,
@@ -55,7 +54,8 @@ const Home = () => {
                         color="white"
                         lineHeight="shorter"
                     >
-                        Blockchain Engineer
+                        Blockchain{" "}
+                        <chakra.span color="purple">Engineer</chakra.span>
                     </chakra.h1>
                     <chakra.p
                         pr={{ base: 0, lg: 16 }}
