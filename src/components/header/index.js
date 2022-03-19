@@ -61,7 +61,7 @@ export default function Header() {
     );
 
     const Items = (
-        <VStack>
+        <>
             <Button
                 as={Link}
                 href="/"
@@ -98,7 +98,7 @@ export default function Header() {
             >
                 Twitter
             </Button>
-        </VStack>
+        </>
     );
 
     return (
@@ -162,7 +162,7 @@ export default function Header() {
                     <DrawerCloseButton />
 
                     <DrawerBody bg="blackAlpha.800" pt="20" color="white">
-                        {Items}
+                        <VStack>{Items}</VStack>
                     </DrawerBody>
 
                     <DrawerFooter>&nbsp;</DrawerFooter>
