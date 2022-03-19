@@ -7,6 +7,7 @@ const Home = () => {
         <>
             <Box
                 pos="absolute"
+                h="100vh"
                 top={0}
                 left={0}
                 right={0}
