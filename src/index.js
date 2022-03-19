@@ -1,4 +1,12 @@
-import './style';
-import App from './components/app';
+import { SaasProvider, ModalsProvider } from "@saas-ui/react";
+import App from "./components/app";
 
-export default App;
+export default function Index() {
+    return (
+        <SaasProvider>
+            <ModalsProvider>
+                <App />
+            </ModalsProvider>
+        </SaasProvider>
+    );
+}
