@@ -71,7 +71,7 @@ export default function Header() {
 
     return (
         <chakra.header
-            bg="gray.900"
+            bg="transparent"
             color="white"
             w="full"
             px={{ base: 2, sm: 4 }}

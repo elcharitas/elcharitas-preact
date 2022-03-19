@@ -7,9 +7,9 @@ const Home = () => {
         <Box
             h="90vh"
             top={-100}
-            bgSize="cover"
+            bgSize="contain"
             bgRepeat="no-repeat"
-            bg={`url(${Banner})`}
+            bg={`url(${Banner}) center`}
         >
             <SimpleGrid
                 columns={{ base: 1, md: 2 }}
