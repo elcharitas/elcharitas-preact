@@ -25,8 +25,6 @@ export default function Header() {
             alignItems="center"
             as="a"
             aria-label="Sponsor on Open Collective"
-            href={""}
-            target="_blank"
             rel="noopener noreferrer"
             bg="gray.50"
             borderWidth="1px"

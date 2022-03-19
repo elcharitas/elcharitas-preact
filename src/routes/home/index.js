@@ -7,6 +7,7 @@ const Home = () => {
     return (
         <>
             <Box
+                as={Particles}
                 id="particles"
                 pos="absolute"
                 h="100vh"
