@@ -114,6 +114,7 @@ const Home = () => {
             <SimpleGrid
                 columns={{ base: 1, md: 2 }}
                 spacing={0}
+                pt={10}
                 _after={{
                     bg: "brand.500",
                     opacity: 0.25,
@@ -132,7 +133,7 @@ const Home = () => {
                         alignItems="start"
                         justifyContent="center"
                         px={{ base: 4, lg: 20 }}
-                        py={25}
+                        py={35}
                     >
                         <Badge
                             color="white"
