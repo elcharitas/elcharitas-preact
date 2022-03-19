@@ -73,6 +73,7 @@ export default function Header() {
     return (
         <chakra.header
             bg="gray.900"
+            color="white"
             w="full"
             px={{ base: 2, sm: 4 }}
             py={4}
@@ -89,9 +90,6 @@ export default function Header() {
                         elcharitas.dev
                         <VisuallyHidden>elcharitas.dev</VisuallyHidden>
                     </chakra.a>
-                    <chakra.h1 fontSize="xl" fontWeight="medium" ml="2">
-                        elcharitas.dev
-                    </chakra.h1>
                 </Flex>
                 <HStack display="flex" alignItems="center" spacing={1}>
                     <HStack
@@ -108,7 +106,7 @@ export default function Header() {
                             display={{ base: "flex", md: "none" }}
                             aria-label="Open menu"
                             fontSize="20px"
-                            color={useColorModeValue("gray.800", "inherit")}
+                            color={"white"}
                             variant="ghost"
                             icon={<AiOutlineMenu />}
                             onClick={mobileNav.onOpen}
