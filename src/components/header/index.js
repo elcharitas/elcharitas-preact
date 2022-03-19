@@ -1,5 +1,4 @@
 import { h } from "preact";
-import { useState, useEffect, useRef } from "preact/hooks";
 import { Link as PLink } from "preact-router/match";
 import {
     chakra,
@@ -16,7 +15,6 @@ import {
     VStack,
     Button,
 } from "@chakra-ui/react";
-import { useViewportScroll } from "framer-motion";
 import { FaMoon, FaSun, FaHeart } from "react-icons/fa";
 import {
     AiFillGithub,
@@ -34,23 +32,13 @@ const Header = () => {
     const SwitchIcon = useColorModeValue(FaMoon, FaSun);
 
     const bg = useColorModeValue("white", "gray.800");
-    const ref = useRef();
-    const [y, setY] = useState(0);
-    const { height = 0 } = ref.current
-        ? ref.current.getBoundingClientRect()
-        : {};
-
-    const { scrollY } = useViewportScroll();
-    useEffect(() => {
-        return scrollY.onChange(() => setY(scrollY.get()));
-    }, [scrollY]);
 
     const SponsorButton = (
         <Box
             display={{ base: "none", md: "flex" }}
             alignItems="center"
             as="a"
-            aria-label="Sponsor Choc UI on Open Collective"
+            aria-label="Sponsor on Open Collective"
             href={""}
             target="_blank"
             rel="noopener noreferrer"
@@ -104,7 +92,7 @@ const Header = () => {
                 onClick={mobileNav.onClose}
             />
             <Button w="full" variant="ghost" leftIcon={<AiFillHome />}>
-                Dashboard
+                Home
             </Button>
             <Button
                 w="full"
@@ -112,24 +100,23 @@ const Header = () => {
                 colorScheme="brand"
                 leftIcon={<AiOutlineInbox />}
             >
-                Inbox
+                Blog
             </Button>
             <Button
                 w="full"
                 variant="ghost"
                 leftIcon={<BsFillCameraVideoFill />}
             >
-                Videos
+                Contact
             </Button>
         </VStack>
     );
     return (
         <Box pos="relative">
             <chakra.header
-                ref={ref}
-                shadow={y > height ? "sm" : undefined}
+                shadow={"sm"}
                 transition="box-shadow 0.2s"
-                bg={bg}
+                bg={"gray.800"}
                 borderTop="6px solid"
                 borderTopColor="brand.400"
                 w="full"
@@ -144,8 +131,8 @@ const Header = () => {
                         justify="space-between"
                     >
                         <Flex align="center">
-                            <Link as={PLink} href="/">
-                                <HStack>elcharitas.dev</HStack>
+                            <Link as={PLink} href="/" color="gray.400">
+                                elcharitas.dev
                             </Link>
                         </Flex>
 
