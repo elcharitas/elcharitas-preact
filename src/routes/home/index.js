@@ -1,5 +1,12 @@
 import { h } from "preact";
-import { chakra, Flex, Badge, SimpleGrid, Box } from "@chakra-ui/react";
+import {
+    chakra,
+    Flex,
+    Badge,
+    SimpleGrid,
+    Box,
+    ScaleFade,
+} from "@chakra-ui/react";
 import Banner from "../../assets/header.jpg";
 import Particles from "react-tsparticles";
 
@@ -98,6 +105,7 @@ const Home = () => {
                 bottom={0}
                 bgSize="contain"
                 bgRepeat="no-repeat"
+                bgPos="center"
                 bg={`url(${Banner})`}
                 zIndex={-100}
             >
@@ -118,45 +126,47 @@ const Home = () => {
                     content: '" "',
                 }}
             >
-                <Flex
-                    direction="column"
-                    alignItems="start"
-                    justifyContent="center"
-                    px={{ base: 4, lg: 20 }}
-                    py={35}
-                >
-                    <Badge
-                        color="white"
-                        py={1}
-                        variant="solid"
-                        colorScheme="brand"
-                        rounded="full"
+                <ScaleFade initialScale="0.2" in={true}>
+                    <Flex
+                        direction="column"
+                        alignItems="start"
+                        justifyContent="center"
+                        px={{ base: 4, lg: 20 }}
+                        py={35}
                     >
-                        Jonathan Irhodia
-                    </Badge>
-                    <chakra.h1
-                        mb={6}
-                        fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
-                        fontWeight="bold"
-                        color="white"
-                        lineHeight="shorter"
-                    >
-                        Software{" "}
-                        <chakra.span color="purple">Engineer</chakra.span>
-                    </chakra.h1>
-                    <chakra.p
-                        pr={{ base: 0, lg: 16 }}
-                        mb={4}
-                        fontSize="sm"
-                        color={"gray.100"}
-                        letterSpacing="wider"
-                    >
-                        A design centric software genius building amazing
-                        cutting edge technologies using Solidity, Rust,
-                        JavaScript, Dart and Python. Building products for the
-                        web, mobile and the Metaverse.
-                    </chakra.p>
-                </Flex>
+                        <Badge
+                            color="white"
+                            py={1}
+                            variant="solid"
+                            colorScheme="brand"
+                            rounded="full"
+                        >
+                            Jonathan Irhodia
+                        </Badge>
+                        <chakra.h1
+                            mb={6}
+                            fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
+                            fontWeight="bold"
+                            color="white"
+                            lineHeight="shorter"
+                        >
+                            Software{" "}
+                            <chakra.span color="purple">Engineer</chakra.span>
+                        </chakra.h1>
+                        <chakra.p
+                            pr={{ base: 0, lg: 16 }}
+                            mb={4}
+                            fontSize="sm"
+                            color={"gray.100"}
+                            letterSpacing="wider"
+                        >
+                            A design centric software genius building amazing
+                            cutting edge technologies using Solidity, Rust,
+                            JavaScript, Dart and Python. Building products for
+                            the web, mobile and the Metaverse.
+                        </chakra.p>
+                    </Flex>
+                </ScaleFade>
             </SimpleGrid>
         </>
     );
