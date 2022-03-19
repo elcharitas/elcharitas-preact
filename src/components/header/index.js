@@ -16,6 +16,7 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
+    VStack,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaCoffee } from "react-icons/fa";
@@ -60,7 +61,7 @@ export default function Header() {
     );
 
     const Items = (
-        <Box>
+        <VStack>
             <Button
                 as={Link}
                 href="/"
@@ -97,7 +98,7 @@ export default function Header() {
             >
                 Twitter
             </Button>
-        </Box>
+        </VStack>
     );
 
     return (
