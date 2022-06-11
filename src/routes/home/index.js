@@ -8,6 +8,7 @@ import {
   ScaleFade,
 } from "@chakra-ui/react";
 import PageLayout from "../../components/PageLayout";
+import Banner from "../../assets/header.jpg";
 
 const Home = () => {
   return (
