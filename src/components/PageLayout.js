@@ -1,13 +1,5 @@
 import { h } from "preact";
-import {
-  chakra,
-  Flex,
-  Badge,
-  SimpleGrid,
-  Box,
-  ScaleFade,
-} from "@chakra-ui/react";
-import Banner from "../../assets/header.jpg";
+import { Box } from "@chakra-ui/react";
 import Particles from "react-tsparticles";
 
 const PageLayout = ({ children }) => (
